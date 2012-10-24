@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Reminder:</b>
+  <%= @remind_who.reminder_id %>
+</p>
+
+<p>
+  <b>Recipient:</b>
+  <%= @remind_who.recipient %>
+</p>
+
+
+<%= link_to 'Edit', edit_remind_who_path(@remind_who) %> |
+<%= link_to 'Back', remind_whos_path %>

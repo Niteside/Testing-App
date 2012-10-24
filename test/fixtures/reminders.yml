@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  remind_month: MyString
+  remind_day: MyString
+  remind_year: MyString
+  type: 
+  name: MyString
+  message: MyString
+  active: false
+
+two:
+  remind_month: MyString
+  remind_day: MyString
+  remind_year: MyString
+  type: 
+  name: MyString
+  message: MyString
+  active: false

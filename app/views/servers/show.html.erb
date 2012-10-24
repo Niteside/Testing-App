@@ -1,0 +1,30 @@
+<div class='normal_table'>
+  <table>
+    <thead>
+    <tr>
+
+      <th>Name</th>
+      <th>Ports</th>
+      <th>IP</th>
+      <th>Edit</th>
+      <th>Back</th>
+
+
+    </tr>
+    </thead>
+
+    <tbody>
+
+
+    <tr>
+
+      <td><%= @server.name %></td>
+      <td><%= @ports.to_s.gsub(/[\[\]]/, '')%></td>
+      <td><%= @server.ip %></td>
+      <td><%= link_to 'Edit', edit_server_path(@server) %></td>
+      <td><%= link_to 'Back', server_path%></td>
+    </tr>
+
+      </tbody>
+      </table>
+</div>

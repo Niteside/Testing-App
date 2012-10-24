@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Remind month:</b>
+  <%= @reminder.remind_month %>
+</p>
+
+<p>
+  <b>Remind day:</b>
+  <%= @reminder.remind_day %>
+</p>
+
+<p>
+  <b>Remind year:</b>
+  <%= @reminder.remind_year %>
+</p>
+
+<p>
+  <b>Type:</b>
+  <%= @reminder.type %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%= @reminder.name %>
+</p>
+
+<p>
+  <b>Message:</b>
+  <%= @reminder.message %>
+</p>
+
+<p>
+  <b>Active:</b>
+  <%= @reminder.active %>
+</p>
+
+
+<%= link_to 'Edit', edit_reminder_path(@reminder) %> |
+<%= link_to 'Back', reminders_path %>

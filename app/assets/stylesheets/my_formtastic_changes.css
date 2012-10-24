@@ -1,0 +1,95 @@
+/* -------------------------------------------------------------------------------------------------
+
+Load this stylesheet after formtastic.css in your layouts to override the CSS to suit your needs.
+This will allow you to update formtastic.css with new releases without clobbering your own changes.
+
+For example, to make the inline hint paragraphs a little darker in color than the standard #666:
+
+form.formtastic fieldset ol li p.inline-hints { color:#333; }
+
+--------------------------------------------------------------------------------------------------*/
+
+form.formtastic fieldset {
+    font-family: helvetica, arial, freesans, clean, sans-serif;
+    font-size: 12px;
+    display: inline-block;
+}
+
+form.formtastic fieldset legend {
+    font-weight: bold;
+}
+
+form.formtastic fieldset.inputs {
+    background-color: #cccccc;
+    border: 1px solid #000000;
+    padding: 10px;
+    border-radius: 5px; /* IE9, Opera 10.5 */
+    -webkit-border-radius: 5px; /* Safari, Chrome */
+    -moz-border-radius: 5px; /* Firefox */
+}
+
+form.formtastic fieldset ol li p.inline-hints {
+    color: #333;
+    font-size: 11px;
+    font-style: italic;
+}
+
+form.formtastic legend.label {
+    font-size: 1em;
+    font-weight: bold;
+}
+
+
+form.formtastic fieldset ol li label { display:block; width:100%; float:none; padding-top:.1em; }
+
+form.formtastic fieldset ol li select { width:220px; }
+
+form.formtastic fieldset ol li.string input { width:218px;  height:18px; }
+
+.nested-fields {
+    width: 5000px;
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+}
+
+.nested-fields ol li {
+    margin-bottom: 0;
+}
+
+form.formtastic fieldset ol li  {
+    margin-bottom: 0;
+}
+
+form.formtastic fieldset ol li fieldset ol {
+    padding: 0;
+    margin: 0;
+}
+
+form.formtastic fieldset ol li fieldset ol li {
+    left: -200px;
+}
+
+form.formtastic fieldset ol li.boolean label {
+    padding-left: 10px;
+    width: 250px;
+}
+
+form.formtastic fieldset ol li.boolean label.shorter {
+    padding-left: 10px;
+    width: 20px;
+}
+
+
+form.formtastic fieldset ol li.text textarea {
+    width: 500px;
+    height: 100px;
+}
+
+form.formtastic fieldset ol li.string input.longer {
+    width: 500px;
+}
+
+.no-horz-scroll {
+    width: 920px;
+}

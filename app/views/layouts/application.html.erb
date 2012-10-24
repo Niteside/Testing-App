@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>TestApp</title>
+
+  <%= stylesheet_link_tag 'formtastic', 'my_formtastic_changes', :media => "all" %>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= stylesheet_link_tag    "style", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= javascript_include_tag "jquery-1.3.1.min" %>
+  <%= javascript_include_tag "jquery.dropdpwnPlain" %>
+
+  <%= csrf_meta_tags %>
+
+ <div id="recent_episodes">
+    <h3>Recent ASCIIcasts Episodes</h3>
+    <ul>
+      <% for entry in FeedEntry.all(:limit => 10, :order => "published_at desc") %>
+          <li><%= link_to h(entry.name), entry.url %></li>
+      <% end %>
+    </ul>
+  </div>
+
+
+  <div id="recent_episodes">
+  <ul class="dropdown">
+
+    <li class>
+      <a href="#">Links</a>
+      <ul class="sub_menu" style="visibility: hidden;">
+        <li class>
+          <a href="#">
+            KOBRA/REPORTING
+          </a>
+            <ul style="visibility: hidden;">
+              <li> <a href="http://oracle-as.ovd.microbac.com/forms/frmservlet">KOBRA</a></li>
+              <li> <a href="http://oracle-as.ovd.microbac.com/reports/rwservlet/showjobs?queuetype=current" target="_blank">Reports Queue</a></li>
+              <li> <a href="http://documents.ovd.microbac.com" target="_blank">Document Management</a></li>
+              <li> <a href="http://pdfmaker.ovd.microbac.com" target="_blank">PDF Maker</a></li>
+              <li> <a href="http://youtrack.ovd.microbac.com:8080" target="_blank">OVD Issue Tracker</a></li>
+              <li> <a href="http://teamcity.ovd.microbac.com:8111" target="_blank">OVD Integration Server</a></li>
+            </ul>
+        </li>
+        <li class>
+          <a href="#">
+            Employee
+          </a>
+          <ul style="visibility: hidden;">
+            <li> <a href="http://mail.microbac.com" target="_blank">Microbac WebMail</a></li>
+            <li> <a href="http://home.microsoftonline.com" target="_blank">Microsoft Portal</a></li>
+            <li> <a href="http://fileserver2.ovd.microbac.com/vol1/Microbac Information/" target="_blank">Microbac Information</a></li>
+            <li> <a href="https://portal.microbac-ovd.com" target="_blank">Client WebPortal</a></li>
+            <li> <a href="http://hrconnect.microbac.com/" target="_blank">Employee Portal</a></li>
+            <li> <a href="http://mail.ovd.microbac.com/webmail" target="_blank">SquirrelMail</a></li>
+            <li> <a href="http://fileserver2/pdf1/Job%20Classifications.pdf" target="_blank">Job Classification Guidelines</a></li>
+            <li> <a href="https://adpeet2.adp.com/62ja2p/applications/wtk/html/ess/logon.jsp" target="_blank">ADP TimeCard</a></li>
+            <li> <a href="https://adpeet2.adp.com/62ja2p/portal" target="_blank">ADP TimeCard Managers</a></li>
+            <li> <a href="https://ipay.adp.com/iPay/index.jsf" target="_blank">ADP iPay Statements</a></li>
+            <li> <a href="https://www.retirementdirections.com" target="_blank">PNC 401(k) Plan</a></li>
+          </ul>
+        </li>
+        <li class>
+          <a href="#">
+            General
+          </a>
+          <ul style="visibility: hidden;">
+            <li> <a href="http://fileserver2.ovd.microbac.com/vol1/QAPPs/">QAPP's</a></li>
+            <li> <a href="http://fileserver2.ovd.microbac.com/vol1/MSDS/">MSDS</a></li>
+            <li> <a href="http://fileserver2.ovd.microbac.com/vol1/SafetyTeam">Safety Team</a></li>
+            <li> <a href="http://fileserver2.ovd.microbac.com/vol1/rad_license.pdf">RAD License</a></li>
+            <li> <a href="http://www.odh.ohio.gov/">RAD Rules</a></li>
+            <li> <a href="http://fileserver2.ovd.microbac.com/pdf1/2011_USDA_Soil_Permit.pdf" target="_blank">USDA License</a></li>
+            <li> <a href="http://fileserver2.ovd.microbac.com/pdf1/safety_team/checklist.pdf" target="_blank">Safety Checklist</a></li>
+            <li> <a href="http://fileserver2.ovd.microbac.com/pdf1/safety_team/safety_concern_form.pdf" target="_blank">Safety Concern Form</a></li>
+            <li> <a href="http://fileserver2.ovd.microbac.com/pdf1/safety_team/accident_incident_report.xls" target="_blank">Accident/Incident Form</a></li>
+          </ul>
+        </li>
+        <li class>
+          <a href="#">
+            WorkFlows
+          </a>
+          <ul style="visibility: hidden;">
+           <li> <%= link_to 'Begin Workflow', servers_path %></li>
+          </ul>
+        </li>
+        <li class>
+          <a href="#">
+            Internet
+          </a>
+          <ul style="visibility: hidden;">
+            <li> <a href="#">Google</a></li>
+            <li> <a href="#">Ask.com</a></li>
+            <li> <a href="#">Yahoo!</a></li>
+            <li> <a href="#">NIST on the Internet</a></li>
+            <li> <a href="#">Periodic Table of Elements</a></li>
+          </ul>
+        </li>
+        </ul>
+    </li>
+    <li class>
+      <a href="#">Accounting</a>
+        <ul class="sub_menu" style="visibility: hidden;">
+            <li class>
+              <a href="#">
+                Project Information
+              </a>
+                <ul style="visibility: hidden;">
+                    <li> <a href="#">Account Setup</a></li>
+                    <li> <a href="#">Project Setup</a></li>
+                    <li> <a href="#">Search Logins</a></li>
+                    <li> <a href="#">Search Projects</a></li>
+                    <li> <a href="#">Project QAPPs</a></li>
+                    <li> <a href="#">Accounts</a></li>
+              </ul>
+            </li>
+          <li class>
+            <a href="#">
+                   Reports
+            </a>
+            <ul style="visibility: hidden;">
+              <li> <a href="#">Current Projects</a></li>
+              <li> <a href="#">Products over Time</a></li>
+            </ul>
+          </li>
+          <li class>
+            <a href="#">
+              Invoices
+            </a>
+            <ul style="visibility: hidden;">
+              <li> <a href="#">Invoices</a></li>
+              <li> <a href="#">New Invoice</a></li>
+            </ul>
+          </li>
+          <li class>
+            <a href="#">
+              Sales
+            </a>
+            <ul style="visibility: hidden;">
+              <li> <a href="#">Sales Workdue</a></li>
+              <li> <a href="#">Export Weekly DDF</a></li>
+              <li> <a href="#">Proposals</a></li>
+              <li> <a href="#">Export Logins by Account# for a Date Range</a></li>
+            </ul>
+          </li>
+          <li class>
+            <a href="#">
+              Links
+            </a>
+            <ul style="visibility: hidden;">
+              <li> <a href="#">Vendors</a></li>
+              <li> <a href="#">Search Vendors</a></li>
+            </ul>
+          </li>
+          <li class>
+            <a href="#">
+              Prelogs
+            </a>
+            <ul style="visibility: hidden;">
+              <li> <a href="#">Import Samples from CSV</a></li>
+            </ul>
+          </li>
+        </ul>
+    </li>
+    <li class>
+      <a href="#">Shipping</a>
+      <ul class="sub_menu" style="visibility: hidden;">
+        <li class>
+          <a href="#">
+            PDA Tools
+          </a>
+          <ul style="visibility: hidden;">
+            <li> <a href="#">Cooler Receipts</a></li>
+            <li> <a href="#">Edit Discrepancy Statements</a></li>
+            <li> <a href="#">Edit Container Information</a></li>
+          </ul>
+        </li>
+        <li class>
+          <a href="#">
+            Miscellaneous
+          </a>
+          <ul style="visibility: hidden;">
+            <li> <a href="#">Print Return Shipping Labels</a></li>
+            <li> <a href="#">Find Next Login Sequence</a></li>
+            <li> <a href="#">Billable Shipping Charges</a></li>
+          </ul>
+        </li>
+        <li class>
+          <a href="#">
+            Exlectronic COC
+          </a>
+          <ul style="visibility: hidden;">
+            <li> <a href="#">Upload A COC</a></li>
+            <li> <a href="#">Setup Automatic Login Projects</a></li>
+            <li> <a href="#">Assign Cooler IDs</a></li>
+            <li> <a href="#">Export to MFA</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li class>
+      <a href="#">Sample Scheduling</a>
+      <ul class="sub_menu" style="visibility: hidden;">
+        <li class>
+          <a href="#">
+            Sample Status
+          </a>
+          <ul style="visibility: hidden;">
+            <li> <a href="#">Query by Worklist</a></li>
+            <li> <a href="#">Department 12 QA/QC Status</a></li>
+            <li> <a href="#">Department 11 QA/QC Status</a></li>
+            <li> <a href="#">Department 11 - Sample in WIP statuses</a></li>
+            <li> <a href="#">Department 12 - Sample in WIP statuses</a></li>
+            <li> <a href="#">Check all status for Login #</a></li>
+            <li> <a href="#">Department Worklist(Anything not DONE)</a></li>
+            <li> <a href="#">Manually Query In-house Samples</a></li>
+            <li> <a href="#">Sample History</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li class>
+      <a href="#">Data Analysis</a>
+      <ul class="sub_menu" style="visibility: hidden;">
+        <li class>
+          <a href="#">
+            Case Narratives
+          </a>
+          <ul style="visibility: hidden;">
+            <li> <a href="#">Queue</a></li>
+            <li> <a href="#">Find Narratives Using Login #</a></li>
+            <li> <a href="#">Create Using Template</a></li>
+            <li> <a href="#">Create Using Department</a></li>
+            <li> <a href="#">Canned Statements</a></li>
+            <li> <a href="#">Templates</a></li>
+          </ul>
+        </li>
+        <li class>
+          <a href="#">
+            Data Processing
+          </a>
+          <ul style="visibility: hidden;">
+            <li> <a href="#">Analyte Trends by Runlog</a></li>
+            <li> <a href="#">Reprocess Batch Upload</a></li>
+            <li> <a href="#">Review SDG</a></li>
+            <li> <a href="#">Review Workgroup</a></li>
+          </ul>
+        </li>
+        <li class>
+          <a href="#">
+            Method Maintenance
+          </a>
+          <ul style="visibility: hidden;">
+            <li> <a href="#">View RT Window Standards</a></li>
+          </ul>
+        </li>
+        <li class>
+          <a href="#">
+            Exceptions
+          </a>
+          <ul style="visibility: hidden;">
+            <li> <a href="#">Find Exceptions</a></li>
+          </ul>
+        </li>
+        <li class>
+          <a href="#">
+            Client Requirements
+          </a>
+          <ul style="visibility: hidden;">
+            <li> <a href="#">TRRP Checklists</a></li>
+          </ul>
+        </li>
+        <li class>
+          <a href="#">
+            Curve Processing
+          </a>
+          <ul style="visibility: hidden;">
+            <li> <a href="#">Curve Information</a></li>
+            <li> <a href="#">Initial Calibrations</a></li>
+          </ul>
+        </li>
+        <li class>
+          <a href="#">
+            Data Links
+          </a>
+          <ul style="visibility: hidden;">
+            <li> <a href="#">Upload Batches</a></li>
+            <li> <a href="#">Run Logs</a></li>
+            <li> <a href="#">Search Samples</a></li>
+          </ul>
+        </li>
+        <li class>
+          <a href="#">
+            Sample Data
+          </a>
+          <ul style="visibility: hidden;">
+            <li> <a href="#">review Sample Data</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li class>
+      <a href="#">Reporting</a>
+      <ul class="sub_menu" style="visibility: hidden;">
+        <li class>
+          <a href="#">
+            Status
+          </a>
+          <ul style="visibility: hidden;">
+            <li> <a href="#">Needs Printed</a></li>
+            <li> <a href="#">Needs Mailed</a></li>
+            <li> <a href="#">Mailed, But Unlocked</a></li>
+          </ul>
+        </li>
+        <li class>
+          <a href="#">
+            Data Assembly
+          </a>
+          <ul style="visibility: hidden;">
+            <li> <a href="#">Builder Worthy</a></li>
+            <li> <a href="#">Review Reports</a></li>
+            <li> <a href="#">Build Complete Package</a></li>
+          </ul>
+        </li>
+        <li class>
+          <a href="#">
+            Export Data
+          </a>
+          <ul style="visibility: hidden;">
+            <li> <a href="#">Export Data (EDD)</a></li>
+            <li> <a href="#">Export Data (Utility)</a></li>
+            <li> <a href="#">EDC (RL)</a></li>
+            <li> <a href="#">EDC (MDL</a></li>
+          </ul>
+        </li>
+        <li class>
+          <a href="#">
+            Maintenance
+          </a>
+          <ul style="visibility: hidden;">
+            <li> <a href="#">Reporting Lists</a></li>
+            <li> <a href="#">Find Reports</a></li>
+          </ul>
+        </li>
+        <li class>
+          <a href="#">
+            Production Reports
+          </a>
+          <ul style="visibility: hidden;">
+            <li> <a href="#">Department Revenue</a></li>
+            <li> <a href="#">On Time</a></li>
+            <li> <a href="#">Billable Samples by Instrument</a></li>
+            <li> <a href="#">State of Origin</a></li>
+            <li> <a href="#">Amount Logged</a></li>
+            <li> <a href="#">Daily Status</a></li>
+            <li> <a href="#">Invoice Register</a></li>
+            <li> <a href="#">Project TATs</a></li>
+            <li> <a href="#">Corporate MMR</a></li>
+            <li> <a href="#">Analyst Productivity</a></li>
+            <li> <a href="#">Review Runlogs</a></li>
+          </ul>
+        </li>
+        <li class>
+          <a href="#">
+            Report Setup
+          </a>
+          <ul style="visibility: hidden;">
+            <li> <a href="#">Report Types</a></li>
+            <li> <a href="#">Report Criteria</a></li>
+          </ul>
+        </li>
+        <li class>
+          <a href="#">
+            Portal Tasks
+          </a>
+          <ul style="visibility: hidden;">
+            <li> <a href="#">Portal Usage</a></li>
+            <li> <a href="#">Upload Files</a></li>
+            <li> <a href="#">Export Project to Portal</a></li>
+            <li> <a href="#">Export Files to Portal</a></li>
+          </ul>
+        </li>
+        <li class>
+          <a href="#">
+            Invoicing
+          </a>
+          <ul style="visibility: hidden;">
+            <li> <a href="#">Reported but not Invoiced</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li class>
+      <a href="#">Quality Control</a>
+      <ul class="sub_menu" style="visibility: hidden;">
+        <li class>
+          <a href="#">
+            Temperature Monitoring
+          </a>
+          <ul style="visibility: hidden;">
+            <li> <a href="#">Probes</a></li>
+            <li> <a href="#">Reference Thermometers</a></li>
+            <li> <a href="#">Calibrations Report</a></li>
+          </ul>
+        </li>
+        <li class>
+          <a href="#">
+            Data Links
+          </a>
+          <ul style="visibility: hidden;">
+            <li> <a href="#">Find ICV Failures</a></li>
+            <li> <a href="#">Results for a Login</a></li>
+            <li> <a href="#">results for an Analyte</a></li>
+          </ul>
+        </li>
+        <li class>
+          <a href="#">
+            Miscellaneous
+          </a>
+          <ul style="visibility: hidden;">
+            <li> <a href="#">Audited Reports</a></li>
+            <li> <a href="#">Complaints</a></li>
+            <li> <a href="#">EDC (RL)</a></li>
+          </ul>
+        </li>
+        <li class>
+          <a href="#">
+            State Information
+          </a>
+          <ul style="visibility: hidden;">
+            <li> <a href="#">Certifications</a></li>
+          </ul>
+        </li>
+        <li class>
+          <a href="#">
+            Reporting
+          </a>
+          <ul style="visibility: hidden;">
+            <li> <a href="#">QAPP Qualifier Criteria</a></li>
+          </ul>
+        </li>
+        <li class>
+          <a href="#">
+            Curve Data
+          </a>
+          <ul style="visibility: hidden;">
+            <li> <a href="#">Instrument QC Products</a></li>
+          </ul>
+        </li>
+        <li class>
+          <a href="#">
+            Lab Equpiment
+          </a>
+          <ul style="visibility: hidden;">
+            <li> <a href="#">Glassware</a></li>
+            <li> <a href="#">Glassware Types</a></li>
+            <li> <a href="#">Glassware Calibrations</a></li>
+          </ul>
+        </li>
+        <li class>
+          <a href="#">
+            Quality Control
+          </a>
+          <ul style="visibility: hidden;">
+            <li> <a href="#">Find Control Charts</a></li>
+            <li> <a href="#">Control Charting</a></li>
+            <li> <a href="#">All Active Control Charts</a></li>
+            <li> <a href="#">QC Groups</a></li>
+            <li> <a href="#">Import from KOBRA</a></li>
+          </ul>
+        </li>
+        <li class>
+          <a href="#">
+            Knowledge Tree
+          </a>
+          <ul style="visibility: hidden;">
+            <li> <a href="#">Document Control - Master List</a></li>
+            <li> <a href="#">CSV Format</a></li>
+            <li> <a href="#">SOP by Department</a></li>
+          </ul>
+        </li>
+        <li class>
+          <a href="#">
+            Maintenance
+          </a>
+          <ul style="visibility: hidden;">
+            <li> <a href="#">Sample Types</a></li>
+            <li> <a href="#">Analytes</a></li>
+            <li> <a href="#">Unit Conversions</a></li>
+            <li> <a href="#">Quality Control Keys</a></li>
+          </ul>
+        </li>
+        <li class>
+          <a href="#">
+            Regulatory Programs
+          </a>
+          <ul style="visibility: hidden;">
+            <li> <a href="#">Limit Comparison</a></li>
+            <li> <a href="#">Limits</a></li>
+          </ul>
+        </li>
+        <li class>
+          <a href="#">
+            Product Setup/Maintenance
+          </a>
+          <ul style="visibility: hidden;">
+            <li> <a href="#">Find Products</a></li>
+          </ul>
+        </li>
+        <li class>
+          <a href="#">
+            Reporting Methods
+          </a>
+          <ul style="visibility: hidden;">
+            <li> <a href="#">Generic Methods</a></li>
+            <li> <a href="#">Report Methods</a></li>
+            <li> <a href="#">QC Methods</a></li>
+            <li> <a href="#">Default Reporting Methods</a></li>
+            <li> <a href="#">Create Reporting Method</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li class>
+      <a href="#">Tasks</a>
+      <ul class="sub_menu" style="visibility: hidden;">
+        <li class>
+          <a href="#">
+            Database Tools
+          </a>
+          <ul style="visibility: hidden;">
+            <li> <a href="#">Oracle PL/SQL Queue</a></li>
+            <li> <a href="#">Resque</a></li>
+          </ul>
+        </li>
+        <li class>
+          <a href="#">
+            Common Tasks
+          </a>
+          <ul style="visibility: hidden;">
+            <li> <a href="#">Reminders</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li class>
+      <a href="#">System Administration</a>
+      <ul class="sub_menu" style="visibility: hidden;">
+        <li class>
+          <a href="#">
+            Administration
+          </a>
+          <ul style="visibility: hidden;">
+            <li> <a href="#">Administration Console</a></li>
+            <li> <a href="#">Kill Unicorns</a></li>
+          </ul>
+        </li>
+        <li class>
+          <a href="#">
+            Server Management
+          </a>
+          <ul style="visibility: hidden;">
+            <li> <a href="#">View Exceptions</a></li>
+            <li> <a href="#">HP Tape Autoloader</a></li>
+            <li> <a href="#">Clarity Log Viewer (System)</a></li>
+            <li> <a href="#"></a>Clarity Log Viewer (Rails)</li>
+          </ul>
+        </li>
+        <li class>
+          <a href="#">
+            Filesystem Maintenance
+          </a>
+          <ul style="visibility: hidden;">
+            <li> <a href="#">Data Folders</a></li>
+            <li> <a href="#">DF Archives</a></li>
+          </ul>
+        </li>
+        <li class>
+          <a href="#">
+            Maintenance Tables
+          </a>
+          <ul style="visibility: hidden;">
+            <li> <a href="#">Run Types</a></li>
+            <li> <a href="#">Sample Types</a></li>
+            <li> <a href="#">Association Codes</a></li>
+            <li> <a href="#">Container Ordering</a></li>
+            <li> <a href="#">Container Definitions</a></li>
+          </ul>
+        </li>
+        <li class>
+          <a href="#">
+            Hardware Maintenance
+          </a>
+          <ul style="visibility: hidden;">
+            <li> <a href="#">Computers</a></li>
+            <li> <a href="#">Instruments</a></li>
+            <li> <a href="#">Labels</a></li>
+            <li> <a href="http://192.168.4.8/microbac_network_diagram.htm">Network Diagram</a></li>
+          </ul>
+        </li>
+        <li class>
+          <a href="#">
+            Database Tools
+          </a>
+          <ul style="visibility: hidden;">
+            <li> <a href="#">Chart Table Row counts</a></li>
+            <li> <a href="#">SQL Benchmarking</a></li>
+            <li> <a href="#">Oracle SQL Performance</a></li>
+          </ul>
+        </li>
+        <li class>
+          <a href="#">
+            AMANDA Backups
+          </a>
+          <ul style="visibility: hidden;">
+            <li> <a href="#">Tapes</a></li>
+          </ul>
+        </li>
+        <li class>
+          <a href="#">
+            Data Assembler
+          </a>
+          <ul style="visibility: hidden;">
+            <li> <a href="#">Edit Schemese</a></li>
+            <li> <a href="#">Report Types</a></li>
+          </ul>
+        </li>
+        <li class>
+          <a href="#">
+            Git Repository
+          </a>
+          <ul style="visibility: hidden;">
+            <li> <a href="http://fileserver2.ovd.microbac.com/lims/gitstats/authors.html">LIMS Statistics</a></li>
+            <li> <a href="http://dreports.ovd.microbac.com:8080/">You Track</a></li>
+            <li> <a href="http://dreports.ovd.microbac.com:8111/">TeamCity</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+  </div>
+
+</head>
+<br>
+<br>
+
+
+
+<body>
+
+<%= yield %>
+
+</body>
+</html>
+

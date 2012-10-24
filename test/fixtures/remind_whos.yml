@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  reminder_id: 1
+  recipient: MyString
+
+two:
+  reminder_id: 1
+  recipient: MyString

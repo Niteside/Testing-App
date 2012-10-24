@@ -1,0 +1,13 @@
+    <%= semantic_form_for @server do |f| %>
+        <%= f.inputs do %>
+            <%= f.input :ip, :label => "Server ip:" %>   <br>
+
+            <%= f.input :name, :label => "Server Name" %>   <br>
+            <%= f.input :tack_action, :label => "Try to Fix?" %>   <br>
+
+
+            <%= f.action :submit, :button_html => {:class => "primary", :disable_with => "Wait..", :value => "Update"} %>
+        <% end %>
+    <% end %>
+
+

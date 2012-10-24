@@ -1,0 +1,61 @@
+/*
+ *= require formtastic
+ *= require my_formtastic_changes
+ *= require_tree .
+ *= require_self
+*/
+
+#recent_episodes { float: left; border: solid 1px #666; margin: 8px 0 16px 16px; padding: 4px; background-color: #DDD; }
+#recent_episodes h3 { margin: 0; font-size: 1em; }
+#recent_episodes ul { list-style: none; margin-left: 8px; padding-left: 0; }
+#recent_episodes a { font-size: 0.9em; }
+
+
+
+
+html{
+    background-image: url(/images/mars.jpg);
+}
+
+.normal_table table, .normal_table td, .normal_table th {
+    border: 1px solid #333;
+    padding: 2px;
+    background-color:white;
+}
+
+.normal_table th {
+    background-color: #eee;
+    text-align: center;
+    font-weight: bold;
+    padding: 10px;
+}
+
+.normal_table td {
+    text-align: center;
+    padding: 2px;
+}
+
+.normal_table tr.warning {
+    background-color: #f2a5aa;
+}
+
+.normal_table tr.violation {
+    background-color: #d12d33;
+}
+
+.normal_table td .unaltered_temperature {
+    color: #cccccc;
+}
+
+.normal_table tr.past_due {
+    background: #FA5858;
+}
+
+.normal_table tr.warning_row {
+    background: #ff6600;
+}
+
+.page_layout h2 {
+    font-size: 2em;
+}
+

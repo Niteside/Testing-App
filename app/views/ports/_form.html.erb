@@ -1,0 +1,13 @@
+<%= semantic_form_for @port do |f| %>
+  <%= f.inputs do %>
+    <%= f.input :port %>
+    <%= f.input :actionable %>
+    <%= f.input :command %>
+    <%= f.input :server_id, :as=>:select, :collection=>Server.all, :include_blank=>false,
+     :label=>"Server:"%>
+  <% end %>
+
+  <%= f.actions do %>
+    <%= f.action :submit %>
+  <% end %>
+<% end %>

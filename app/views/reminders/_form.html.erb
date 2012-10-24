@@ -1,0 +1,17 @@
+<%= semantic_form_for @reminder do |f| %>
+  <%= f.inputs do %>
+        <%= f.input :name %>
+        <%= f.input :active %> <br>
+        <%= f.input :remind_month, :collection => ["Every", "Jan", "Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"], :as => :select %>
+        <%= f.input :remind_day, :collection => @days, :as => :select %>
+        <%= f.input :remind_year %>
+        <%= f.input :type %>
+        <br>
+        <%= f.input :message, :as => :text %>
+
+  <% end %>
+
+  <%= f.actions do %>
+    <%= f.action :submit, :as => :input %>
+  <% end %>
+<% end %>

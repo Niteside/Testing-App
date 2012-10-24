@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  port: 1
+  actionable: false
+  command: MyText
+  server_id: 1
+
+two:
+  port: 1
+  actionable: false
+  command: MyText
+  server_id: 1
